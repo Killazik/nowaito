@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@keyframes logoWaveFloat {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-2deg) scale(1);
+  }
+  25% {
+    transform: translate3d(0, -10px, 0) rotate(1deg) scale(1.015);
+  }
+  50% {
+    transform: translate3d(0, 4px, 0) rotate(-1deg) scale(0.995);
+  }
+  75% {
+    transform: translate3d(0, -6px, 0) rotate(1.5deg) scale(1.01);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg) scale(1);
+  }
+}
+
+@keyframes logoCoinTurn {
+  0%,
+  82%,
+  100% {
+    transform: perspective(600px) rotateY(0deg) scale(1);
+  }
+  86% {
+    transform: perspective(600px) rotateY(90deg) scale(1.02);
+  }
+  90% {
+    transform: perspective(600px) rotateY(180deg) scale(1.04);
+  }
+  94% {
+    transform: perspective(600px) rotateY(270deg) scale(1.02);
+  }
+  98% {
+    transform: perspective(600px) rotateY(360deg) scale(1);
+  }
+}
+
+.logo-wave-float {
+  animation: logoWaveFloat 7.5s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.logo-wave-float-slow {
+  animation-duration: 11s;
+}
+
+.logo-coin-turn {
+  animation: logoCoinTurn 8s ease-in-out infinite;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+body {
+  background: #121212;
+  color: #e0e0e0;
+}
